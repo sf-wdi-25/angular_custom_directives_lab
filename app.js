@@ -16,7 +16,7 @@ function currentWeather() {
       function (vm, $http) {
         var url = "http://api.openweathermap.org/data/2.5/weather?mode=json&cnt=7&units=imperial&callback=JSON_CALLBACK&q=";
         // ask Justin for an API key or go to openweathermap.org to acquire your own!
-        var apiKey = "&APPID=0d6ff01ce151dad29810a492dea78b0f"
+        var apiKey = "&APPID=ASK_JUSTIN_FOR_AN_API_KEY_OR_THIS_WILL_FAIL"
 
         vm.getWeather = function(city) {
           $http({ method: 'JSONP', url: url + city + apiKey })
