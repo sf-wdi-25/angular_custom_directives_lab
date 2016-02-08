@@ -8,13 +8,13 @@ function currentWeather() {
     scope: {
       city: '@'
     },
-    template: '<div class="current-weather"><h4>Weather for {{city}}</h4>{{vm.weather.main.temp}}</div>',
+    template: '<div class="current-weather"><h4>Weather for {{city}}</h4>{{wCtrl.weather.main.temp}}</div>',
     // templateUrl: 'templates/currentWeatherTemplate.html',
     // transclude: true,
     controller: weatherController,
-    controllerAs: 'vm',
+    controllerAs: 'wCtrl',
     link: function (scope, element, attributes, controller) {
-      scope.vm.weather = scope.vm.getWeather(attributes.city);
+      scope.wCtrl.weather = scope.wCtrl.getWeather(attributes.city);
     }
   };
 
@@ -26,8 +26,7 @@ function weatherController($http) {
   var vm = this;
   var url = "http://api.openweathermap.org/data/2.5/weather?mode=json&cnt=7&units=imperial&callback=JSON_CALLBACK&q=";
   // ask Justin for an API key or go to openweathermap.org to acquire your own!
-  var apiKey = "&appid=xxxxxxxxxx";
-
+  var apiKey = "&appid=xxxxxxxxxxxxxxxxxxxx";
   vm.getWeather = getWeather;
 
   function getWeather(city) {
